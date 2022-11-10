@@ -5,7 +5,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const url = urlParams.get('url');
 
-        const content = [
+        const parts = [
             '<!DOCTYPE html>',
             '<html>',
             '<head>',
@@ -29,7 +29,11 @@
             '</html>'
     ];
 
-        document.write(content.join('\n'));
+        const content = parts.join('\n');
+
+        console.log(content);
+
+        document.write(content);
     </script>
 </head>
 <body>
