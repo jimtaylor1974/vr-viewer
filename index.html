@@ -9,7 +9,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const url = urlParams.get('url');
 
-            document.getElementByTagName('babylon').settAttribute('model', url);
+            document.getElementsByTagName('babylon')[0].settAttribute('model', url);
         });
     </script>
 </head>
