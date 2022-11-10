@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function(event) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const url = urlParams.get('url');
+        const urlParams = new URLSearchParams(window.location.search);
+        const url = urlParams.get('url');
 
-            document.getElementsByTagName('babylon')[0].settAttribute('model', url);
-        });
+        const content = [
+            '<!DOCTYPE html>',
+            '<html>',
+            '<head>',
+            '<meta charset="utf-8" />',
+            '<title></title>',
+            '<script ',
+            'src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></',
+            'script>',
+            '<body>',
+            '<babylon model="',
+            url,
+            '">',
+            '<vr></vr>',
+            '<templates>',
+            '<nav-bar>',
+            '<params hide-vr="false"></params>',
+            '</nav-bar>',
+            '</templates>',
+            '</babylon>',
+            '</body>',
+            '</html>'
+    ];
+
+        document.write(content.join('\n'));
     </script>
 </head>
 <body>
-    <babylon model="[url]">
-        <vr></vr>
-        <templates>
-            <nav-bar>
-                <params hide-vr="false"></params>
-            </nav-bar>
-        </templates>
-    </babylon>
 </body>
 </html>
