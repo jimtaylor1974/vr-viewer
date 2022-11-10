@@ -1,5 +1,26 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        It worked
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const url = urlParams.get('url');
+
+            document.getElementByTagName('babylon').settAttribute('model', url);
+        });
+    </script>
+</head>
+<body>
+    <babylon model="[url]">
+        <vr></vr>
+        <templates>
+            <nav-bar>
+                <params hide-vr="false"></params>
+            </nav-bar>
+        </templates>
+    </babylon>
+</body>
 </html>
