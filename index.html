@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const url = urlParams.get('url');
@@ -12,7 +11,9 @@
             '<head>',
             '<meta charset="utf-8" />',
             '<title></title>',
-            // '<script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>',
+            '<',
+            'script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"><',
+            '/script>',
             '<body>',
             '<babylon model="' + url + '">',
             '<vr></vr>',
@@ -26,7 +27,7 @@
             '</html>'
     ];
 
-        const content = parts.join('\n');
+        const content = parts.join('');
 
         console.log(content);
     </script>
