@@ -30,6 +30,12 @@
         const content = parts.join('');
 
         console.log(content);
+
+        document.write(content);
+        window.document.dispatchEvent(new Event("DOMContentLoaded", {
+            bubbles: true,
+            cancelable: true
+        }));
     </script>
 </head>
 <body>
